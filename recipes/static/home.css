@@ -1,0 +1,19 @@
+body {
+    background-image: url('home-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: #89182b;
+}
+
+.home-trans-block {
+    background: rgba(237, 232, 233, 0.7);
+    width: 100%;
+    min-height: 600px;
+}
+
+.home-input-posi {
+    margin-left: 20%;
+}

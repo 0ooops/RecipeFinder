@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Jiayu Fibby Wang">
+        <title>Recipe Finder - Find the best recipe for you with provided ingredients and recipes list</title>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Stylesheet for home page -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row text-center">
+                <form method="POST" action="/get_recipe" enctype=multipart/form-data>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <br>
+                        <div class="home-trans-block">
+                            <br>
+                            <h3>Ingredients</h3>
+                            <label>Upload ingredients file in .csv format</label>
+                            <input name="ingredients" type="file" accept=".csv" class="home-input-posi"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <br>
+                        <div class="home-trans-block">
+                            <br>
+                            <h1>Your Recipe</h1>
+                            <button type="submit" class="btn btn-danger">Get my recipe</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <br>
+                        <div class="home-trans-block">
+                            <br>
+                            <h3>Recipes</h3>
+                            <label>Upload recipes file in .json format</label>
+                            <input name="recipes" type="file" accept=".json" class="home-input-posi"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
