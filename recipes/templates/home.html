@@ -13,15 +13,22 @@
     </head>
     <body>
         <div class="container">
+            {% if error %}
+            <div class="alert alert-danger">
+                <strong>Error!</strong> {{ error }}
+            </div>
+            {% endif %}
             <div class="row text-center">
-                <form method="POST" action="/get_recipe" enctype=multipart/form-data>
+                <form method="POST" action="" enctype=multipart/form-data>
                     <div class="col-lg-4 col-md-4 col-sm-12">
                         <br>
                         <div class="home-trans-block">
                             <br>
                             <h3>Ingredients</h3>
+                            <br>
                             <label>Upload ingredients file in .csv format</label>
                             <input name="ingredients" type="file" accept=".csv" class="home-input-posi"/>
+                            <a href="{{ url_for('static', filename='ingredients.csv') }}" download><u>Download an example</u></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12">
@@ -29,7 +36,11 @@
                         <div class="home-trans-block">
                             <br>
                             <h1>Your Recipe</h1>
+                            <br>
                             <button type="submit" class="btn btn-danger">Get my recipe</button>
+                            {% if recipe %}
+                            <p class="home-recipe-name">{{ recipe }}</p>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12">
@@ -37,8 +48,10 @@
                         <div class="home-trans-block">
                             <br>
                             <h3>Recipes</h3>
+                            <br>
                             <label>Upload recipes file in .json format</label>
                             <input name="recipes" type="file" accept=".json" class="home-input-posi"/>
+                            <a href="{{ url_for('static', filename='recipes.json') }}" download><u>Download an example</u></a>
                         </div>
                     </div>
                 </form>

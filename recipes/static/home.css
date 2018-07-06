@@ -15,5 +15,11 @@ h1 {
 }
 
 .home-input-posi {
-    margin-left: 20%;
+    margin: 5% 0 5% 23%;
+}
+
+.home-recipe-name {
+    margin-top: 20%;
+    font-size: 30px;
+    font-weight: bold;
 }
