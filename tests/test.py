@@ -3,7 +3,6 @@ import sys
 sys.path.append("..")  
 from recipes.main import *
 import unittest
-import json, csv
 
 
 class Test(unittest.TestCase):
