@@ -1,7 +1,7 @@
 # RecipeFinder
 
 | Introduction
-This is a web application built on Flask and Python. Given a list of ingredients and a collection of recipes, the application can help you decide the best recipe accordingly.
+<br />This is a web application built on Flask and Python. Given a list of ingredients and a collection of recipes, the application can help you decide the best recipe accordingly.
 
 | Code Structure
 - recipes
@@ -15,8 +15,8 @@ This is a web application built on Flask and Python. Given a list of ingredients
 - .gitignore
 
 | Commands
-Run server: 
+<br />Run server: 
 > python .\recipe\main.py
-Run unit tests:
+<br />Run unit tests:
 > cd .\tests\
 > python .\test.py
