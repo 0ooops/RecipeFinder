@@ -38,8 +38,6 @@ def validate_ing(file_ing):
     ingredients = []
     for row in csv_input:
         if len(row) == 4 and row[1].isdigit() and re.search("^\d+/\d+/\d+?", row[3]):
-            row[1] = int(row[1])
-            row[3] = datetime.datetime.strptime(row[3], "%d/%m/%Y")
             ingredients.append(row)
     if len(ingredients) > 0:
         return ingredients
@@ -83,9 +81,9 @@ def validate_recipe(ingredients, recipe_ingres):
         has_ingre = False
         for item in ingredients:
             if item[0] == recipe_ingre['item'] \
-            and item[1] >= int(recipe_ingre['amount']) \
+            and int(item[1]) >= int(recipe_ingre['amount']) \
             and item[2] == recipe_ingre['unit'] \
-            and item[3] > today_date:
+            and datetime.datetime.strptime(item[3], "%d/%m/%Y") > today_date:
                 has_ingre = True
                 if ingre_date == None or item[3] < ingre_date:
                     ingre_date = item[3]
